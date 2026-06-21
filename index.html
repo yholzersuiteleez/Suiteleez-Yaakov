@@ -1,0 +1,2368 @@
+<!DOCTYPE html>
+<!-- saved from url=(0142)file:///Users/yaakovholzer/Downloads/Suiteleez%20Floor%20Plans/April%2028th%20Floor%20Plans/Suiteleez%20Black%20Code%20Website%20Feb%2022.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuiteLeez | AI-Powered Commercial Real Estate Leasing</title>
+  <meta name="description" content="Find and customize office space with AI. Search thousands of listings, visualize floor plans, and close your lease—all in one platform.">
+  <meta name="keywords" content="commercial real estate, office space, lease, AI floor plan, commercial leasing">
+  <meta property="og:title" content="SuiteLeez | AI-Powered Commercial Real Estate Leasing">
+  <meta property="og:description" content="Find and customize office space with AI. Search thousands of listings, visualize floor plans, and close your lease—all in one platform.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://suiteleez.org">
+  <link rel="canonical" href="https://suiteleez.org/">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./fonts.css" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="./lucide.min.js"></script>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      /* Primary colors - Neutral/Zinc matching suiteleez.com */
+      --indigo-50: #fafafa;
+      --indigo-100: #f5f5f5;
+      --indigo-200: #e5e5e5;
+      --indigo-300: #a3a3a3;
+      --indigo-400: #737373;
+      --indigo-500: #525252;
+      --indigo-600: #18181b;
+      --indigo-700: #0a0a0a;
+      /* Secondary colors - Also neutral */
+      --purple-50: #fafafa;
+      --purple-100: #f5f5f5;
+      --purple-300: #a3a3a3;
+      --purple-400: #737373;
+      --purple-500: #525252;
+      --purple-600: #27272a;
+      --purple-700: #18181b;
+      /* Gray scale */
+      --gray-50: #fafafa;
+      --gray-100: #f5f5f5;
+      --gray-200: #e5e5e5;
+      --gray-300: #d4d4d4;
+      --gray-400: #a3a3a3;
+      --gray-500: #737373;
+      --gray-600: #525252;
+      --gray-700: #404040;
+      --gray-800: #262626;
+      --gray-900: #171717;
+      /* Accent colors */
+      --green-500: #22c55e;
+      --yellow-400: #facc15;
+      --pink-500: #ec4899;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--gray-900);
+      background: white;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    button {
+      cursor: pointer;
+      font-family: inherit;
+      border: none;
+      outline: none;
+    }
+    
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .container { padding: 0 1.5rem; }
+    }
+    
+    @media (min-width: 1024px) {
+      .container { padding: 0 2rem; }
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 50;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--indigo-600), var(--purple-600));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    
+    .logo-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .nav-links { display: flex; }
+    }
+    
+    .nav-links a {
+      color: var(--gray-600);
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--gray-900);
+    }
+    
+    .nav-cta {
+      display: none;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    @media (min-width: 768px) {
+      .nav-cta { display: flex; }
+    }
+    
+    .btn {
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    
+    .btn-ghost {
+      background: transparent;
+      color: var(--gray-600);
+    }
+    
+    .btn-ghost:hover {
+      color: var(--gray-900);
+    }
+    
+    .btn-primary {
+      background: var(--indigo-600);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: var(--indigo-700);
+    }
+    
+    .btn-large {
+      padding: 1rem 2rem;
+      font-size: 1.125rem;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--gray-300);
+      color: var(--gray-700);
+    }
+    
+    .btn-outline:hover {
+      border-color: var(--gray-400);
+    }
+    
+    .btn-white {
+      background: white;
+      color: var(--gray-900);
+    }
+    
+    .btn-white:hover {
+      background: var(--gray-100);
+    }
+    
+    .mobile-menu-btn {
+      display: flex;
+      padding: 0.5rem;
+      background: transparent;
+    }
+    
+    @media (min-width: 768px) {
+      .mobile-menu-btn { display: none; }
+    }
+    
+    .mobile-menu {
+      display: none;
+      background: white;
+      border-top: 1px solid var(--gray-100);
+      padding: 1rem;
+    }
+    
+    .mobile-menu.active {
+      display: block;
+    }
+    
+    @media (min-width: 768px) {
+      .mobile-menu { display: none !important; }
+    }
+    
+    .mobile-menu a {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 0.75rem 0;
+      color: var(--gray-600);
+    }
+    
+    .mobile-menu hr {
+      border: none;
+      border-top: 1px solid var(--gray-200);
+      margin: 0.5rem 0;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding-top: 6rem;
+      padding-bottom: 4rem;
+      background: linear-gradient(to bottom, var(--gray-50), white);
+    }
+    
+    @media (min-width: 768px) {
+      .hero {
+        padding-top: 8rem;
+        padding-bottom: 6rem;
+      }
+    }
+    
+    .hero-grid {
+      display: grid;
+      gap: 3rem;
+      align-items: center;
+    }
+    
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--indigo-100);
+      color: var(--indigo-700);
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    
+    @media (min-width: 768px) {
+      .hero h1 { font-size: 3rem; }
+    }
+    
+    @media (min-width: 1024px) {
+      .hero h1 { font-size: 3.75rem; }
+    }
+    
+    .gradient-text {
+      background: linear-gradient(to right, var(--gray-900), var(--gray-700));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--gray-600);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    @media (min-width: 640px) {
+      .hero-buttons { flex-direction: row; }
+    }
+    
+    .hero-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+    
+    .hero-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .hero-feature svg {
+      color: var(--green-500);
+    }
+    
+    /* Hero Visual */
+    .hero-visual {
+      position: relative;
+    }
+    
+    .hero-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      padding: 1.5rem;
+      border: 1px solid var(--gray-100);
+      display: block;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .hero-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .search-bar {
+      background: var(--gray-50);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .search-input-group {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    
+    .search-input {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      color: var(--gray-500);
+    }
+    
+    .search-btn {
+      background: var(--indigo-600);
+      color: white;
+      padding: 0.75rem;
+      border-radius: 8px;
+    }
+    
+    .search-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .search-tag {
+      background: white;
+      border: 1px solid var(--gray-200);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+    }
+    
+    .search-tag.highlight {
+      background: var(--indigo-100);
+      color: var(--indigo-700);
+      border-color: transparent;
+    }
+    
+    .floor-plan {
+      background: linear-gradient(135deg, var(--gray-100), var(--gray-50));
+      border-radius: 12px;
+      padding: 1.5rem;
+      position: relative;
+    }
+    
+    .ai-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--indigo-600);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .floor-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      height: 160px;
+      margin-bottom: 1rem;
+    }
+    
+    .floor-room {
+      background: rgba(255, 255, 255, 0.8);
+      border: 2px dashed var(--indigo-300);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--indigo-400);
+      text-align: center;
+      padding: 0.5rem;
+    }
+    
+    .floor-room.purple {
+      border-color: var(--gray-400);
+      color: var(--gray-500);
+    }
+    
+    .floor-room.wide {
+      grid-column: span 2;
+      font-size: 0.875rem;
+    }
+    
+    .ai-prompt {
+      background: white;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    .ai-prompt svg {
+      color: var(--indigo-500);
+    }
+    
+    /* Floating Elements */
+    .float-badge {
+      position: absolute;
+      background: var(--green-500);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      font-size: 0.875rem;
+      font-weight: 500;
+      top: -1rem;
+      right: -1rem;
+    }
+    
+    .float-users {
+      position: absolute;
+      background: white;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--gray-100);
+      bottom: -1rem;
+      left: -1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .avatar-stack {
+      display: flex;
+    }
+    
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-left: -8px;
+    }
+    
+    .avatar:first-child {
+      margin-left: 0;
+    }
+    
+    .avatar.indigo { background: var(--indigo-500); }
+    .avatar.purple { background: var(--purple-500); }
+    .avatar.pink { background: var(--pink-500); }
+    
+    .float-users span {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+
+    /* Stats Section */
+    .stats {
+      background: var(--gray-900);
+      padding: 3rem 0;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    
+    .stat {
+      text-align: center;
+    }
+    
+    .stat-value {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+    
+    @media (min-width: 768px) {
+      .stat-value { font-size: 2.25rem; }
+    }
+    
+    .stat-label {
+      color: var(--gray-400);
+    }
+
+    /* How It Works */
+    .how-it-works {
+      padding: 5rem 0;
+      background: white;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .section-header h2 {
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    @media (min-width: 768px) {
+      .section-header h2 { font-size: 2.25rem; }
+    }
+    
+    .section-header p {
+      font-size: 1.25rem;
+      color: var(--gray-600);
+      max-width: 42rem;
+      margin: 0 auto;
+    }
+    
+    .steps-grid {
+      display: grid;
+      gap: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .steps-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    
+    @media (min-width: 1024px) {
+      .steps-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    
+    .step-card {
+      background: linear-gradient(135deg, var(--gray-100), var(--gray-50));
+      border-radius: 16px;
+      padding: 1.5rem;
+      position: relative;
+    }
+    
+    .step-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--indigo-200);
+      margin-bottom: 1rem;
+    }
+    
+    .step-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    
+    .step-card p {
+      color: var(--gray-600);
+    }
+    
+    .step-arrow {
+      display: none;
+      position: absolute;
+      top: 50%;
+      right: -1rem;
+      transform: translateY(-50%);
+      color: var(--indigo-300);
+    }
+    
+    @media (min-width: 1024px) {
+      .step-arrow { display: block; }
+    }
+
+    /* Features */
+    .features {
+      padding: 5rem 0;
+      background: var(--gray-50);
+    }
+    
+    .features-grid {
+      display: grid;
+      gap: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    
+    @media (min-width: 1024px) {
+      .features-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    
+    .feature-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid var(--gray-100);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      transition: box-shadow 0.2s;
+    }
+    
+    .feature-card:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--indigo-100);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--indigo-600);
+      margin-bottom: 1.5rem;
+    }
+    
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    
+    .feature-card p {
+      color: var(--gray-600);
+    }
+
+    /* For Tenants & Landlords */
+    .audience {
+      padding: 5rem 0;
+      background: white;
+    }
+    
+    .audience-grid {
+      display: grid;
+      gap: 3rem;
+    }
+    
+    @media (min-width: 1024px) {
+      .audience-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    
+    .audience-card {
+      border-radius: 24px;
+      padding: 2rem;
+      color: white;
+    }
+    
+    @media (min-width: 768px) {
+      .audience-card { padding: 3rem; }
+    }
+    
+    .audience-card.tenants {
+      background: linear-gradient(135deg, var(--gray-900), var(--gray-800));
+    }
+    
+    .audience-card.landlords {
+      background: linear-gradient(135deg, var(--gray-800), var(--gray-900));
+    }
+    
+    .audience-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .audience-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    @media (min-width: 768px) {
+      .audience-card h3 { font-size: 1.875rem; }
+    }
+    
+    .audience-card > p {
+      opacity: 0.9;
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+    }
+    
+    .audience-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    
+    .audience-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    
+    .audience-list svg {
+      opacity: 0.7;
+      flex-shrink: 0;
+    }
+    
+    .audience-card .btn {
+      background: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+    
+    .audience-card.tenants .btn {
+      color: var(--gray-900);
+    }
+    
+    .audience-card.landlords .btn {
+      color: var(--gray-800);
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: 5rem 0;
+      background: var(--gray-50);
+    }
+    
+    .testimonials-grid {
+      display: grid;
+      gap: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    
+    .testimonial-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid var(--gray-100);
+    }
+    
+    .stars {
+      display: flex;
+      gap: 0.25rem;
+      margin-bottom: 1rem;
+    }
+    
+    .stars svg {
+      color: var(--yellow-400);
+      fill: var(--yellow-400);
+    }
+    
+    .testimonial-card blockquote {
+      color: var(--gray-700);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--gray-700), var(--gray-900));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+    }
+    
+    .author-name {
+      font-weight: 600;
+    }
+    
+    .author-role {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    /* Resources */
+    .resources {
+      padding: 5rem 0;
+      background: white;
+    }
+    
+    .resources-header {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 3rem;
+    }
+    
+    @media (min-width: 768px) {
+      .resources-header {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+    }
+    
+    .resources-header h2 {
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    @media (min-width: 768px) {
+      .resources-header h2 { font-size: 2.25rem; }
+    }
+    
+    .resources-header > p {
+      font-size: 1.25rem;
+      color: var(--gray-600);
+    }
+    
+    .resources-header a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--indigo-600);
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+    
+    @media (min-width: 768px) {
+      .resources-header a { margin-top: 0; }
+    }
+    
+    .resources-header a:hover {
+      color: var(--indigo-700);
+    }
+    
+    .articles-grid {
+      display: grid;
+      gap: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .articles-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    
+    .article-card {
+      display: block;
+    }
+    
+    .article-image {
+      background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+      border-radius: 16px;
+      height: 192px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+    
+    .article-card:hover .article-image {
+      background: linear-gradient(135deg, var(--gray-200), var(--gray-100));
+    }
+    
+    .article-image svg {
+      color: var(--gray-300);
+      transition: color 0.3s;
+    }
+    
+    .article-card:hover .article-image svg {
+      color: var(--gray-500);
+    }
+    
+    .article-category {
+      color: var(--indigo-600);
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    
+    .article-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0.5rem 0 0.75rem;
+      transition: color 0.2s;
+    }
+    
+    .article-card:hover h3 {
+      color: var(--indigo-600);
+    }
+    
+    .article-card > p {
+      color: var(--gray-600);
+      margin-bottom: 0.75rem;
+    }
+    
+    .article-time {
+      font-size: 0.875rem;
+      color: var(--gray-400);
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 5rem 0;
+      background: var(--gray-50);
+    }
+    
+    .faq-container {
+      max-width: 48rem;
+      margin: 0 auto;
+    }
+    
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--gray-200);
+      overflow: hidden;
+    }
+    
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 1.5rem;
+      background: transparent;
+      text-align: left;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .faq-question:hover {
+      background: var(--gray-50);
+    }
+    
+    .faq-question svg {
+      color: var(--gray-500);
+      flex-shrink: 0;
+    }
+    
+    .faq-answer {
+      display: none;
+      padding: 0 1.5rem 1.25rem;
+      color: var(--gray-600);
+    }
+    
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, var(--gray-900), var(--gray-800), var(--gray-900));
+      text-align: center;
+    }
+    
+    .final-cta h2 {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+    
+    @media (min-width: 768px) {
+      .final-cta h2 { font-size: 3rem; }
+    }
+    
+    .final-cta > .container > p {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 42rem;
+      margin: 0 auto 2.5rem;
+    }
+    
+    .final-cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    
+    @media (min-width: 640px) {
+      .final-cta-buttons { flex-direction: row; }
+    }
+    
+    .final-cta .btn-outline {
+      border-color: rgba(255, 255, 255, 0.3);
+      color: white;
+    }
+    
+    .final-cta .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .final-cta-note {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--gray-900);
+      color: var(--gray-400);
+      padding: 4rem 0;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    @media (min-width: 768px) {
+      .footer-grid { grid-template-columns: repeat(5, 1fr); }
+    }
+    
+    .footer-brand {
+      grid-column: span 2;
+    }
+    
+    .footer-brand .logo {
+      margin-bottom: 1rem;
+    }
+    
+    .footer-brand .logo-text {
+      color: white;
+    }
+    
+    .footer-brand > p {
+      color: var(--gray-500);
+      margin-bottom: 1.5rem;
+      max-width: 280px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: var(--gray-800);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    
+    .social-link:hover {
+      background: var(--gray-700);
+    }
+    
+    .footer-column h4 {
+      color: white;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-column ul {
+      list-style: none;
+    }
+    
+    .footer-column li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .footer-column a {
+      transition: color 0.2s;
+    }
+    
+    .footer-column a:hover {
+      color: white;
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid var(--gray-800);
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+    
+    @media (min-width: 768px) {
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    
+    .footer-bottom p {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+    
+    .footer-legal {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .footer-legal a {
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    
+    .footer-legal a:hover {
+      color: white;
+    }
+
+    /* City Guides Section */
+    .city-guides {
+      padding: 5rem 0;
+      background: linear-gradient(180deg, white 0%, var(--gray-50) 100%);
+    }
+    .city-guides .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3rem;
+    }
+    .city-guides h2 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .city-guides .section-header p {
+      color: var(--gray-600);
+      font-size: 1.125rem;
+    }
+    .city-guides-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .city-tab {
+      padding: 0.55rem 1.1rem;
+      border-radius: 9999px;
+      background: white;
+      border: 1px solid var(--gray-200);
+      color: var(--gray-700);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .city-tab:hover { border-color: var(--gray-400); }
+    .city-tab.active {
+      background: var(--indigo-600);
+      color: white;
+      border-color: var(--indigo-600);
+    }
+    .city-guides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1rem;
+    }
+    .city-guide-card {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+      padding: 1.5rem;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: inherit;
+    }
+    .city-guide-card:hover {
+      border-color: var(--indigo-600);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+    .city-guide-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--gray-500);
+    }
+    .city-guide-tier {
+      background: var(--gray-100);
+      color: var(--gray-700);
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      font-weight: 500;
+    }
+    .city-guide-tier.t1 { background: rgba(34,197,94,.12); color: #15803d; }
+    .city-guide-tier.t2 { background: rgba(234,179,8,.15); color: #a16207; }
+    .city-guide-tier.t3 { background: rgba(168,85,247,.12); color: #7e22ce; }
+    .city-guide-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--gray-900);
+    }
+    .city-guide-card p {
+      color: var(--gray-600);
+      font-size: 0.92rem;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+    .city-guide-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--gray-100);
+      font-size: 0.85rem;
+      color: var(--indigo-600);
+      font-weight: 500;
+    }
+    .city-guide-foot .word-count { color: var(--gray-500); font-weight: 400; }
+    .city-guide-card.hidden { display: none; }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="https://suiteleez.org/" class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="building-2" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-building-2"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg>
+        </div>
+        <span class="logo-text">SuiteLeez</span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#features">Features</a>
+        <a href="#city-guides">City Guides</a>
+        <a href="#resources">Resources</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://app.suiteleez.com/landlords">For Landlords</a>
+      </div>
+      
+      <div class="nav-cta">
+        <a href="https://app.suiteleez.com/login" class="btn btn-ghost">Sign In</a>
+        <a href="https://app.suiteleez.com/" class="btn btn-primary">Get Started Free</a>
+      </div>
+      
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" aria-hidden="true" id="menu-icon" style="width: 24px; height: 24px;" class="lucide lucide-menu"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+      </button>
+    </div>
+    
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+      <a href="#features" onclick="closeMobileMenu()">Features</a>
+      <a href="#city-guides" onclick="closeMobileMenu()">City Guides</a>
+      <a href="#resources" onclick="closeMobileMenu()">Resources</a>
+      <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+      <a href="https://app.suiteleez.com/landlords">For Landlords</a>
+      <hr>
+      <a href="https://app.suiteleez.com/login">Sign In</a>
+      <a href="https://app.suiteleez.com/" class="btn btn-primary" style="margin-top: 0.5rem; text-align: center;">Get Started Free</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sparkles" aria-hidden="true" style="width: 16px; height: 16px;" class="lucide lucide-sparkles"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
+            AI-Powered Commercial Leasing
+          </div>
+          <h1>Find Your Perfect<br><span class="gradient-text">Office Space</span></h1>
+          <p>Search thousands of listings, customize floor plans with AI, and close your lease—all in one platform. See your team in the space before you sign.</p>
+          <div class="hero-buttons">
+            <a href="https://app.suiteleez.com/" class="btn btn-primary btn-large">
+              Start Your Free Search
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-arrow-right"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+            <a href="https://app.suiteleez.com/demo" class="btn btn-outline btn-large">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="play" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-play"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg>
+              Watch Demo
+            </a>
+          </div>
+          <div class="hero-features">
+            <div class="hero-feature">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              No credit card required
+            </div>
+            <div class="hero-feature">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              Free for tenants
+            </div>
+          </div>
+        </div>
+        
+        <div class="hero-visual">
+          <a href="https://app.suiteleez.com/" class="hero-card">
+            <div class="search-bar">
+              <div class="search-input-group">
+                <div class="search-input">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="search" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-search"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>
+                  <span>Search Austin, TX offices...</span>
+                </div>
+                <span class="search-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="search" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-search"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>
+                </span>
+              </div>
+              <div class="search-tags">
+                <span class="search-tag">2,000-5,000 sq ft</span>
+                <span class="search-tag">$30-50/sq ft</span>
+                <span class="search-tag highlight">+ Filters</span>
+              </div>
+            </div>
+            
+            <div class="floor-plan">
+              <div class="ai-badge">AI Customized</div>
+              <div class="floor-grid">
+                <div class="floor-room wide">Open Workspace</div>
+                <div class="floor-room purple">Conference Room</div>
+                <div class="floor-room">Kitchen</div>
+                <div class="floor-room purple wide">Private Offices</div>
+              </div>
+              <div class="ai-prompt">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sparkles" aria-hidden="true" style="width: 16px; height: 16px;" class="lucide lucide-sparkles"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
+                "Make the conference room 20% larger"
+              </div>
+            </div>
+          </a>
+          
+          <div class="float-badge">✓ 247 spaces found</div>
+          
+          <div class="float-users">
+            <div class="avatar-stack">
+              <div class="avatar indigo">JD</div>
+              <div class="avatar purple">MK</div>
+              <div class="avatar pink">AL</div>
+            </div>
+            <span>+2.4k users this week</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-value">10,000+</div>
+          <div class="stat-label">Active Listings</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">500+</div>
+          <div class="stat-label">Cities Covered</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">98%</div>
+          <div class="stat-label">Customer Satisfaction</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">2.5x</div>
+          <div class="stat-label">Faster Lease Closing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2>How SuiteLeez Works</h2>
+        <p>From discovery to signed lease in four simple steps</p>
+      </div>
+      
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3>Search &amp; Discover</h3>
+          <p>Browse thousands of verified commercial listings with AI-labeled floor plans and detailed specs.</p>
+          <div class="step-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" aria-hidden="true" style="width: 32px; height: 32px;" class="lucide lucide-arrow-right"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3>Customize &amp; Visualize</h3>
+          <p>Use natural language to modify layouts. Create multiple versions and compare side-by-side.</p>
+          <div class="step-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" aria-hidden="true" style="width: 32px; height: 32px;" class="lucide lucide-arrow-right"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3>Connect &amp; Negotiate</h3>
+          <p>Chat directly with landlords in secure deal rooms. Schedule tours with one click.</p>
+          <div class="step-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" aria-hidden="true" style="width: 32px; height: 32px;" class="lucide lucide-arrow-right"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <h3>Sign &amp; Move In</h3>
+          <p>Generate LOIs, finalize terms, and complete e-signatures—all in one platform.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Powerful Features for Modern Leasing</h2>
+        <p>Everything you need to find, customize, and secure your perfect commercial space</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="search" aria-hidden="true" style="width: 24px; height: 24px;" class="lucide lucide-search"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>
+          </div>
+          <h3>Smart Search</h3>
+          <p>Filter by location, size, price, and amenities. Find your perfect space in seconds.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sparkles" aria-hidden="true" style="width: 24px; height: 24px;" class="lucide lucide-sparkles"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
+          </div>
+          <h3>AI Floor Plan Customization</h3>
+          <p>Type 'make the conference room bigger' and watch your layout transform instantly.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="building-2" aria-hidden="true" style="width: 24px; height: 24px;" class="lucide lucide-building-2"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg>
+          </div>
+          <h3>3D Visualization</h3>
+          <p>See your team in the space before signing. Visualize furniture, walls, and flow.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="message-square" aria-hidden="true" style="width: 24px; height: 24px;" class="lucide lucide-message-square"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"></path></svg>
+          </div>
+          <h3>Deal Rooms</h3>
+          <p>Collaborate directly with landlords. All negotiations in one organized space.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar" aria-hidden="true" style="width: 24px; height: 24px;" class="lucide lucide-calendar"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
+          </div>
+          <h3>Tour Scheduling</h3>
+          <p>Book property tours instantly. No back-and-forth emails required.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="file-check" aria-hidden="true" style="width: 24px; height: 24px;" class="lucide lucide-file-check"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path><path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="m9 15 2 2 4-4"></path></svg>
+          </div>
+          <h3>Digital Leasing</h3>
+          <p>Generate LOIs and complete e-signatures. Close deals faster than ever.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- For Tenants & Landlords -->
+  <section class="audience">
+    <div class="container">
+      <div class="audience-grid">
+        <div class="audience-card tenants">
+          <div class="audience-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" aria-hidden="true" style="width: 32px; height: 32px;" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
+          </div>
+          <h3>For Tenants</h3>
+          <p>Find your perfect space faster with AI-powered search and customization tools.</p>
+          <ul class="audience-list">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              Search thousands of verified listings
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              Customize floor plans with natural language
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              Compare multiple spaces side-by-side
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              Schedule tours with one click
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              Complete leases digitally
+            </li>
+          </ul>
+          <a href="https://app.suiteleez.com/" class="btn">Start Searching Free</a>
+        </div>
+        
+        <div class="audience-card landlords">
+          <div class="audience-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="briefcase" aria-hidden="true" style="width: 32px; height: 32px;" class="lucide lucide-briefcase"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg>
+          </div>
+          <h3>For Landlords</h3>
+          <p>Attract qualified tenants and close deals faster with our modern platform.</p>
+          <ul class="audience-list">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              List properties for free
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              Receive pre-qualified leads
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              See tenant requirements upfront
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              Manage negotiations in deal rooms
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              Close leases with e-signature
+            </li>
+          </ul>
+          <a href="https://app.suiteleez.com/landlords" class="btn">List Your Property</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>Loved by Teams Everywhere</h2>
+        <p>See what our customers have to say</p>
+      </div>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+          </div>
+          <blockquote>"SuiteLeez cut our office search from 3 months to 3 weeks. The AI customization feature let us see exactly how our team would fit before committing."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">SC</div>
+            <div>
+              <div class="author-name">Sarah Chen</div>
+              <div class="author-role">COO, TechStart Inc.</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+          </div>
+          <blockquote>"As a landlord, I've never had such qualified leads. Tenants come prepared with their layout requirements, making negotiations smoother."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">MR</div>
+            <div>
+              <div class="author-name">Michael Rodriguez</div>
+              <div class="author-role">Property Owner, Austin TX</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+          </div>
+          <blockquote>"The deal room feature is a game-changer. Everything's in one place—no more hunting through email threads for that one attachment."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">JP</div>
+            <div>
+              <div class="author-name">Jennifer Park</div>
+              <div class="author-role">Real Estate Director, Growth Co.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- City Guides Section -->
+  <section class="city-guides" id="city-guides">
+    <div class="container">
+      <div class="section-header">
+        <h2>Office Space Guides by City</h2>
+        <p>Deep-dive market reports for 30 U.S. cities — neighborhoods, pricing, lease terms, and how to find the right space fast.</p>
+      </div>
+
+      <div class="city-guides-tabs" role="tablist">
+        <button type="button" class="city-tab active" data-filter="all">All Cities (30)</button>
+        <button type="button" class="city-tab" data-filter="Tier 1">Major Markets</button>
+        <button type="button" class="city-tab" data-filter="Tier 2">Growing Markets</button>
+        <button type="button" class="city-tab" data-filter="Tier 3">Emerging Markets</button>
+      </div>
+
+      <div class="city-guides-grid" id="city-guides-grid">
+        <a href="./boston-ma-office-space.html" class="city-guide-card" data-tier="Tier 1">
+          <div class="city-guide-meta">
+            <span>📍 Boston MA</span>
+            <span class="city-guide-tier t1">Tier 1 · Major</span>
+          </div>
+          <h3>Office Space for Lease in Boston: Your Complete 2026 Guide</h3>
+          <p>Find office space for lease in Boston MA. Explore Financial District, Seaport, Back Bay and Cambridge. Updated market data and leasing guide for Boston.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">5195 words · April 3</span>
+          </div>
+        </a>
+        <a href="./houston-tx-office-space.html" class="city-guide-card" data-tier="Tier 1">
+          <div class="city-guide-meta">
+            <span>📍 Houston TX</span>
+            <span class="city-guide-tier t1">Tier 1 · Major</span>
+          </div>
+          <h3>Office Space for Lease in Houston: Your Complete 2026 Guide</h3>
+          <p>Find premium office space for lease in Houston TX. Explore neighborhoods, competitive pricing, and market insights. Use SuiteLeez for AI-powered office search.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">6126 words · April 1</span>
+          </div>
+        </a>
+        <a href="./austin-tx-office-space.html" class="city-guide-card" data-tier="Tier 1">
+          <div class="city-guide-meta">
+            <span>📍 Austin TX</span>
+            <span class="city-guide-tier t1">Tier 1 · Major Market</span>
+          </div>
+          <h3>Office Space for Lease in Austin: Your Complete 2026 Guide</h3>
+          <p>Find and customize office space in Austin, TX. Explore downtown, Domain, and East Austin listings. Visualize layouts with AI before signing on SuiteLeez.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">3099 words · February 3</span>
+          </div>
+        </a>
+        <a href="./chicago-il-office-space.html" class="city-guide-card" data-tier="Tier 1">
+          <div class="city-guide-meta">
+            <span>📍 Chicago IL</span>
+            <span class="city-guide-tier t1">Tier 1 · Major Market</span>
+          </div>
+          <h3>Office Space for Lease in Chicago: Your Complete 2026 Guide</h3>
+          <p>Discover top office spaces for lease in Chicago, IL. Explore the Loop, River North, and West Loop. Customize layouts with AI on SuiteLeez. Search free today.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">3454 words · February 12</span>
+          </div>
+        </a>
+        <a href="./dallas-tx-office-space.html" class="city-guide-card" data-tier="Tier 1">
+          <div class="city-guide-meta">
+            <span>📍 Dallas TX</span>
+            <span class="city-guide-tier t1">Tier 1 · Major Market</span>
+          </div>
+          <h3>Office Space for Lease in Dallas: Your Complete 2026 Guide</h3>
+          <p>Find office spaces for lease in Dallas, TX. Explore Uptown, Deep Ellum, and Legacy West. Customize floor plans with AI on SuiteLeez. Search free today.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">2847 words · March 9</span>
+          </div>
+        </a>
+        <a href="./los-angeles-ca-office-space.html" class="city-guide-card" data-tier="Tier 1">
+          <div class="city-guide-meta">
+            <span>📍 Los Angeles CA</span>
+            <span class="city-guide-tier t1">Tier 1 · Major Market</span>
+          </div>
+          <h3>Office Space for Lease in Los Angeles: Your Complete 2026 Guide</h3>
+          <p>Find office spaces for lease in Los Angeles, CA. Explore DTLA, Santa Monica, and Hollywood. Customize floor plans with AI on SuiteLeez. Search free.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">3200 words · March 2</span>
+          </div>
+        </a>
+        <a href="./miami-fl-office-space.html" class="city-guide-card" data-tier="Tier 1">
+          <div class="city-guide-meta">
+            <span>📍 Miami FL</span>
+            <span class="city-guide-tier t1">Tier 1 · Major Market</span>
+          </div>
+          <h3>Office Space for Lease in Miami: Your Complete 2026 Guide</h3>
+          <p>Find the perfect commercial space in Miami. Our AI-powered platform lets you customize layouts in real-time. Search 500+ listings on SuiteLeez today.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">3390 words · February 10</span>
+          </div>
+        </a>
+        <a href="./new-york-city-office-space.html" class="city-guide-card" data-tier="Tier 1">
+          <div class="city-guide-meta">
+            <span>📍 New York City</span>
+            <span class="city-guide-tier t1">Tier 1 · Major Market</span>
+          </div>
+          <h3>Office Space for Lease in NYC: Your Complete 2026 Guide</h3>
+          <p>Find premium office spaces for lease in NYC. Search Manhattan, Brooklyn, and beyond. Customize floor plans with AI on SuiteLeez. Start your free search.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">3637 words · February 5</span>
+          </div>
+        </a>
+        <a href="./san-francisco-ca-office-space.html" class="city-guide-card" data-tier="Tier 1">
+          <div class="city-guide-meta">
+            <span>📍 San Francisco CA</span>
+            <span class="city-guide-tier t1">Tier 1 · Major Market</span>
+          </div>
+          <h3>Office Space for Lease in San Francisco: Your Complete 2026 Guide</h3>
+          <p>Find office spaces for lease in San Francisco. Explore SoMa, FiDi, and Mission Bay. Customize floor plans with AI on SuiteLeez. Start searching free.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">3100 words · March 5</span>
+          </div>
+        </a>
+        <a href="./seattle-wa-office-space.html" class="city-guide-card" data-tier="Tier 1">
+          <div class="city-guide-meta">
+            <span>📍 Seattle WA</span>
+            <span class="city-guide-tier t1">Tier 1 · Major Market</span>
+          </div>
+          <h3>Office Space for Lease in Seattle: Your Complete 2026 Guide</h3>
+          <p>Find office spaces for lease in Seattle, WA. Explore South Lake Union, Pioneer Square, and Bellevue. Customize layouts with AI on SuiteLeez.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">3000 words · March 12</span>
+          </div>
+        </a>
+        <a href="./minneapolis-mn-office-space.html" class="city-guide-card" data-tier="Tier 2">
+          <div class="city-guide-meta">
+            <span>📍 Minneapolis MN</span>
+            <span class="city-guide-tier t2">Tier 2 · Growing</span>
+          </div>
+          <h3>Office Space for Lease in Minneapolis: Your Complete 2026 Guide</h3>
+          <p>Find premium office space for lease in Minneapolis MN. Explore neighborhoods, Fortune 500 hub, skyway system and market insights. SuiteLeez AI search.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">6703 words · April 7</span>
+          </div>
+        </a>
+        <a href="./portland-or-office-space.html" class="city-guide-card" data-tier="Tier 2">
+          <div class="city-guide-meta">
+            <span>📍 Portland OR</span>
+            <span class="city-guide-tier t2">Tier 2 · Growing</span>
+          </div>
+          <h3>Office Space for Lease in Portland: Your Complete 2026 Guide</h3>
+          <p>Find office space for lease in Portland OR. Explore tech neighborhoods, creative districts, sustainable offices. AI-powered search on SuiteLeez today.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">6714 words · April 5</span>
+          </div>
+        </a>
+        <a href="./atlanta-ga-office-space.html" class="city-guide-card" data-tier="Tier 2">
+          <div class="city-guide-meta">
+            <span>📍 Atlanta GA</span>
+            <span class="city-guide-tier t2">Tier 2 · Growing Market</span>
+          </div>
+          <h3>Office Space for Lease in Atlanta: Your Complete 2026 Guide</h3>
+          <p>Find office spaces for lease in Atlanta, GA. Explore Midtown, Buckhead, and West Midtown. Customize floor plans with AI on SuiteLeez. Search free.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">2909 words · February 24</span>
+          </div>
+        </a>
+        <a href="./charlotte-nc-office-space.html" class="city-guide-card" data-tier="Tier 2">
+          <div class="city-guide-meta">
+            <span>📍 Charlotte NC</span>
+            <span class="city-guide-tier t2">Tier 2 · Growing Market</span>
+          </div>
+          <h3>Office Space for Lease in Charlotte: Your Complete 2026 Guide</h3>
+          <p>Find office spaces for lease in Charlotte, NC. Explore Uptown, South End, and NoDa. Customize floor plans with AI on SuiteLeez. Start searching free.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">3103 words · February 25</span>
+          </div>
+        </a>
+        <a href="./denver-co-office-space.html" class="city-guide-card" data-tier="Tier 2">
+          <div class="city-guide-meta">
+            <span>📍 Denver CO</span>
+            <span class="city-guide-tier t2">Tier 2 · Growing Market</span>
+          </div>
+          <h3>Office Space for Lease in Denver: Your Complete 2026 Guide</h3>
+          <p>Find office spaces for lease in Denver, CO. Explore LoDo, RiNo, and Cherry Creek. Customize floor plans with AI on SuiteLeez. Start searching free.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">2907 words · February 17</span>
+          </div>
+        </a>
+        <a href="./nashville-tn-office-space.html" class="city-guide-card" data-tier="Tier 2">
+          <div class="city-guide-meta">
+            <span>📍 Nashville TN</span>
+            <span class="city-guide-tier t2">Tier 2 · Growing Market</span>
+          </div>
+          <h3>Office Space for Lease in Nashville: Your Complete 2026 Guide</h3>
+          <p>Find office spaces for lease in Nashville, TN. Explore the Gulch, SoBro, and East Nashville. Customize layouts with AI on SuiteLeez. Search free.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">2784 words · February 19</span>
+          </div>
+        </a>
+        <a href="./phoenix-az-office-space.html" class="city-guide-card" data-tier="Tier 2">
+          <div class="city-guide-meta">
+            <span>📍 Phoenix AZ</span>
+            <span class="city-guide-tier t2">Tier 2 · Growing Market</span>
+          </div>
+          <h3>Office Space for Lease in Phoenix: Your Complete 2026 Guide</h3>
+          <p>Find office spaces for lease in Phoenix, AZ. Explore Downtown, Scottsdale, and Tempe. Customize floor plans with AI on SuiteLeez. Start searching free.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">2900 words · March 16</span>
+          </div>
+        </a>
+        <a href="./raleigh-durham-nc-office-space.html" class="city-guide-card" data-tier="Tier 2">
+          <div class="city-guide-meta">
+            <span>📍 Raleigh-Durham NC</span>
+            <span class="city-guide-tier t2">Tier 2 · Growing Market</span>
+          </div>
+          <h3>Office Space for Lease in Raleigh-Durham: Your Complete 2026 Guide</h3>
+          <p>Find office spaces for lease in the Raleigh-Durham Triangle. Explore RTP, Downtown Raleigh, and Durham. Customize layouts with AI on SuiteLeez.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">2900 words · March 19</span>
+          </div>
+        </a>
+        <a href="./san-diego-ca-office-space.html" class="city-guide-card" data-tier="Tier 2">
+          <div class="city-guide-meta">
+            <span>📍 San Diego CA</span>
+            <span class="city-guide-tier t2">Tier 2 · Growing Market</span>
+          </div>
+          <h3>Office Space for Lease in San Diego: Your Complete 2026 Guide</h3>
+          <p>Find office spaces for lease in San Diego, CA. Explore Downtown, UTC, and Del Mar Heights. Customize floor plans with AI on SuiteLeez. Search free.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">2950 words · March 25</span>
+          </div>
+        </a>
+        <a href="./tampa-fl-office-space.html" class="city-guide-card" data-tier="Tier 2">
+          <div class="city-guide-meta">
+            <span>📍 Tampa FL</span>
+            <span class="city-guide-tier t2">Tier 2 · Growing Market</span>
+          </div>
+          <h3>Office Space for Lease in Tampa: Your Complete 2026 Guide</h3>
+          <p>Find office spaces for lease in Tampa, FL. Explore Downtown, Westshore, and Ybor City. Customize floor plans with AI on SuiteLeez. Search free today.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">2800 words · March 23</span>
+          </div>
+        </a>
+        <a href="./cincinnati-oh-office-space.html" class="city-guide-card" data-tier="Tier 3">
+          <div class="city-guide-meta">
+            <span>📍 Cincinnati OH</span>
+            <span class="city-guide-tier t3">Tier 3 · Emerging</span>
+          </div>
+          <h3>Office Space for Lease in Cincinnati: Your Complete 2026 Guide</h3>
+          <p>Find premium office space for lease in Cincinnati OH. Explore downtown, Over-the-Rhine, riverfront locations. Check vacancy rates and neighborhoods.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">4369 words · April 13</span>
+          </div>
+        </a>
+        <a href="./indianapolis-in-office-space.html" class="city-guide-card" data-tier="Tier 3">
+          <div class="city-guide-meta">
+            <span>📍 Indianapolis IN</span>
+            <span class="city-guide-tier t3">Tier 3 · Emerging</span>
+          </div>
+          <h3>Office Space for Lease in Indianapolis: Your Complete 2026 Guide</h3>
+          <p>Find premium office space for lease in Indianapolis IN. Explore downtown, Carmel, Broad Ripple and more. Affordable rates. Search free on SuiteLeez.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">4086 words · April 9</span>
+          </div>
+        </a>
+        <a href="./jacksonville-fl-office-space.html" class="city-guide-card" data-tier="Tier 3">
+          <div class="city-guide-meta">
+            <span>📍 Jacksonville FL</span>
+            <span class="city-guide-tier t3">Tier 3 · Emerging</span>
+          </div>
+          <h3>Office Space for Lease in Jacksonville: Your Complete 2026 Guide</h3>
+          <p>Find premium office space for lease in Jacksonville FL. Explore top neighborhoods with competitive rates from $16-30/sq ft. Browse available suites today.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">3576 words · April 17</span>
+          </div>
+        </a>
+        <a href="./kansas-city-mo-office-space.html" class="city-guide-card" data-tier="Tier 3">
+          <div class="city-guide-meta">
+            <span>📍 Kansas City MO</span>
+            <span class="city-guide-tier t3">Tier 3 · Emerging</span>
+          </div>
+          <h3>Office Space for Lease in Kansas City: Your Complete 2026 Guide</h3>
+          <p>Find affordable office space for lease in Kansas City MO. Explore neighborhoods, tech growth, and competitive market. AI-powered search on SuiteLeez.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">6558 words · April 11</span>
+          </div>
+        </a>
+        <a href="./richmond-va-office-space.html" class="city-guide-card" data-tier="Tier 3">
+          <div class="city-guide-meta">
+            <span>📍 Richmond VA</span>
+            <span class="city-guide-tier t3">Tier 3 · Emerging</span>
+          </div>
+          <h3>Office Space for Lease in Richmond: Your Complete 2026 Guide</h3>
+          <p>Premium office space for lease in Richmond VA. Explore Downtown, Scott&#x27;s Addition, West End. Competitive rates $16-32/sq ft. Find your ideal workspace.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">3839 words · April 19</span>
+          </div>
+        </a>
+        <a href="./san-antonio-tx-office-space.html" class="city-guide-card" data-tier="Tier 3">
+          <div class="city-guide-meta">
+            <span>📍 San Antonio TX</span>
+            <span class="city-guide-tier t3">Tier 3 · Emerging</span>
+          </div>
+          <h3>Office Space for Lease in San Antonio: Your Complete 2026 Guide</h3>
+          <p>Discover premium office space for lease in San Antonio TX. Browse available suites in downtown, Pearl, Stone Oak and more. Affordable rates from $16/sq ft.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">3174 words · April 15</span>
+          </div>
+        </a>
+        <a href="./columbus-oh-office-space.html" class="city-guide-card" data-tier="Tier 3">
+          <div class="city-guide-meta">
+            <span>📍 Columbus OH</span>
+            <span class="city-guide-tier t3">Tier 3 · Emerging Market</span>
+          </div>
+          <h3>Office Space for Lease in Columbus: Your Complete 2026 Guide</h3>
+          <p>Find office spaces for lease in Columbus, OH. Explore Downtown, Short North, and Dublin. Customize floor plans with AI on SuiteLeez. Start searching free.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">3040 words · February 28</span>
+          </div>
+        </a>
+        <a href="./orlando-fl-office-space.html" class="city-guide-card" data-tier="Tier 3">
+          <div class="city-guide-meta">
+            <span>📍 Orlando FL</span>
+            <span class="city-guide-tier t3">Tier 3 · Emerging Market</span>
+          </div>
+          <h3>Office Space for Lease in Orlando: Your Complete 2026 Guide</h3>
+          <p>Find office spaces for lease in Orlando, FL. Explore Downtown, Lake Nona, and Maitland. Customize floor plans with AI on SuiteLeez. Start searching free.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">2850 words · March 30</span>
+          </div>
+        </a>
+        <a href="./pittsburgh-pa-office-space.html" class="city-guide-card" data-tier="Tier 3">
+          <div class="city-guide-meta">
+            <span>📍 Pittsburgh PA</span>
+            <span class="city-guide-tier t3">Tier 3 · Emerging Market</span>
+          </div>
+          <h3>Office Space for Lease in Pittsburgh: Your Complete 2026 Guide</h3>
+          <p>Find office spaces for lease in Pittsburgh, PA. Explore Downtown, Strip District, and Lawrenceville. Customize layouts with AI on SuiteLeez. Search free.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">2800 words · March 27</span>
+          </div>
+        </a>
+        <a href="./salt-lake-city-office-space.html" class="city-guide-card" data-tier="Tier 3">
+          <div class="city-guide-meta">
+            <span>📍 Salt Lake City UT</span>
+            <span class="city-guide-tier t3">Tier 3 · Emerging Market</span>
+          </div>
+          <h3>Office Space for Lease in Salt Lake City: Your Complete 2026 Guide</h3>
+          <p>Find premium office spaces for lease in Salt Lake City, UT. Explore Downtown, Sugar House, and Silicon Slopes. Customize layouts with AI on SuiteLeez.</p>
+          <div class="city-guide-foot">
+            <span>Read guide →</span>
+            <span class="word-count">3445 words · February 27</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources -->
+  <section class="resources" id="resources">
+    <div class="container">
+      <div class="resources-header">
+        <div>
+          <h2>Resources &amp; Insights</h2>
+          <p>Expert guides to help you navigate commercial leasing</p>
+        </div>
+        <a href="https://app.suiteleez.com/blog">
+          View All Articles
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-arrow-right"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+      
+      <div class="articles-grid">
+        <a href="https://app.suiteleez.com/blog/negotiate-commercial-lease" class="article-card">
+          <div class="article-image">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="building-2" aria-hidden="true" style="width: 64px; height: 64px;" class="lucide lucide-building-2"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg>
+          </div>
+          <span class="article-category">Guide</span>
+          <h3>How to Negotiate Your Commercial Lease Like a Pro</h3>
+          <p>Learn the key terms, red flags, and strategies that can save you thousands.</p>
+          <span class="article-time">8 min read</span>
+        </a>
+        
+        <a href="https://app.suiteleez.com/blog/2026-office-trends" class="article-card">
+          <div class="article-image">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="building-2" aria-hidden="true" style="width: 64px; height: 64px;" class="lucide lucide-building-2"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg>
+          </div>
+          <span class="article-category">Market Insights</span>
+          <h3>2026 Office Space Trends: What Tenants Want</h3>
+          <p>Hybrid work is reshaping demand. Here's what the data tells us.</p>
+          <span class="article-time">5 min read</span>
+        </a>
+        
+        <a href="https://app.suiteleez.com/blog/austin-office-guide" class="article-card">
+          <div class="article-image">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="building-2" aria-hidden="true" style="width: 64px; height: 64px;" class="lucide lucide-building-2"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg>
+          </div>
+          <span class="article-category">City Guide</span>
+          <h3>Austin Office Space: Neighborhood Breakdown</h3>
+          <p>From Downtown to The Domain—find the perfect area for your team.</p>
+          <span class="article-time">10 min read</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq-container">
+        <div class="section-header">
+          <h2>Frequently Asked Questions</h2>
+          <p>Everything you need to know about SuiteLeez</p>
+        </div>
+        
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>What is SuiteLeez?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <div class="faq-answer">
+              SuiteLeez is an AI-powered commercial real estate platform that helps businesses find, customize, and lease office spaces. Our technology lets you visualize and modify floor plans before signing, making the leasing process faster and more transparent.
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>How does the AI floor plan customization work?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <div class="faq-answer">
+              Simply type what you want in natural language—like 'add two private offices' or 'make the kitchen area larger'—and our AI instantly updates the floor plan. You can save multiple versions and compare them side-by-side.
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Is SuiteLeez free to use?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <div class="faq-answer">
+              Yes! Searching listings and customizing floor plans is completely free for tenants. We only charge a success fee when you successfully close a lease through our platform.
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>What cities do you cover?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <div class="faq-answer">
+              We currently cover major metros including New York, Los Angeles, Chicago, San Francisco, Miami, Austin, Dallas, Houston, Boston, and Seattle—with more cities launching monthly.
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>How is SuiteLeez different from other listing sites?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <div class="faq-answer">
+              Unlike traditional listing sites, SuiteLeez lets you actively customize spaces with AI, collaborate with landlords in real-time deal rooms, and complete the entire leasing process digitally—from discovery to signed lease.
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Can landlords list their properties on SuiteLeez?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <div class="faq-answer">
+              Absolutely! Landlords can list properties for free, receive qualified leads with detailed requirements, and manage negotiations through our streamlined deal room system.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Ready to Find Your Perfect Space?</h2>
+      <p>Join thousands of businesses using SuiteLeez to search, customize, and lease commercial spaces faster than ever.</p>
+      <div class="final-cta-buttons">
+        <a href="https://app.suiteleez.com/" class="btn btn-white btn-large">
+          Start Your Free Search
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-arrow-right"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+        <a href="https://app.suiteleez.com/contact" class="btn btn-outline btn-large">
+          Contact Sales
+        </a>
+      </div>
+      <p class="final-cta-note">No credit card required • Free for tenants • Setup in minutes</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="https://suiteleez.org/" class="logo">
+            <div class="logo-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="building-2" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-building-2"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg>
+            </div>
+            <span class="logo-text">SuiteLeez</span>
+          </a>
+          <p>AI-powered commercial real estate platform. Find, customize, and lease your perfect space.</p>
+          <div class="social-links">
+            <a href="https://twitter.com/suiteleez" class="social-link" target="_blank" rel="noopener">𝕏</a>
+            <a href="https://linkedin.com/company/suiteleez" class="social-link" target="_blank" rel="noopener">in</a>
+            <a href="https://facebook.com/suiteleez" class="social-link" target="_blank" rel="noopener">fb</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="https://app.suiteleez.com/pricing">Pricing</a></li>
+            <li><a href="https://app.suiteleez.com/">Search Listings</a></li>
+            <li><a href="https://app.suiteleez.com/landlords">For Landlords</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="https://app.suiteleez.com/blog">Blog</a></li>
+            <li><a href="https://app.suiteleez.com/guides">Guides</a></li>
+            <li><a href="https://app.suiteleez.com/market-reports">Market Reports</a></li>
+            <li><a href="https://app.suiteleez.com/help">Help Center</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="https://app.suiteleez.com/about">About Us</a></li>
+            <li><a href="https://app.suiteleez.com/careers">Careers</a></li>
+            <li><a href="https://app.suiteleez.com/contact">Contact</a></li>
+            <li><a href="https://app.suiteleez.com/press">Press</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2026 SuiteLeez. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="https://app.suiteleez.com/privacy">Privacy Policy</a>
+          <a href="https://app.suiteleez.com/terms">Terms of Service</a>
+          <a href="https://app.suiteleez.com/cookies">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+    
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('menu-icon');
+      menu.classList.toggle('active');
+      
+      if (menu.classList.contains('active')) {
+        icon.setAttribute('data-lucide', 'x');
+      } else {
+        icon.setAttribute('data-lucide', 'menu');
+      }
+      lucide.createIcons();
+    }
+    
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('menu-icon');
+      menu.classList.remove('active');
+      icon.setAttribute('data-lucide', 'menu');
+      lucide.createIcons();
+    }
+    
+    // FAQ accordion
+    function toggleFaq(button) {
+      const item = button.parentElement;
+      const wasActive = item.classList.contains('active');
+      
+      // Close all FAQ items
+      document.querySelectorAll('.faq-item').forEach(faq => {
+        faq.classList.remove('active');
+        const icon = faq.querySelector('.faq-question i');
+        icon.setAttribute('data-lucide', 'chevron-down');
+      });
+      
+      // Open clicked item if it wasn't already active
+      if (!wasActive) {
+        item.classList.add('active');
+        const icon = button.querySelector('i');
+        icon.setAttribute('data-lucide', 'chevron-up');
+      }
+      
+      lucide.createIcons();
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && href.length > 1) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            closeMobileMenu();
+          }
+        }
+      });
+    });
+  
+    // City Guides filter
+    document.querySelectorAll('.city-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.city-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const f = tab.dataset.filter;
+        document.querySelectorAll('.city-guide-card').forEach(card => {
+          if (f === 'all' || card.dataset.tier === f) card.classList.remove('hidden');
+          else card.classList.add('hidden');
+        });
+      });
+    });
+
+  </script>
+
+
+</body></html>
