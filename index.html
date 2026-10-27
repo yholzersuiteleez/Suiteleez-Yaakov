@@ -219,6 +219,39 @@
     .btn-white:hover {
       background: var(--gray-100);
     }
+
+    /* Top-nav CTA buttons: cool slide-on-hover (brand is monochrome black/white) */
+    .nav-cta .btn {
+      position: relative;
+      overflow: hidden;
+      background-size: 200% 100%;
+      background-position: 0% 0;
+      transition: background-position 0.45s cubic-bezier(0.19, 1, 0.22, 1), color 0.3s ease, transform 0.15s ease, box-shadow 0.25s ease;
+    }
+    .nav-cta .btn:hover { transform: translateY(-1px); }
+    .nav-cta .btn:active { transform: translateY(0); }
+    /* Sign In (ghost): transparent -> dark fill slides across, text turns white */
+    .nav-cta .btn-ghost {
+      background-image: linear-gradient(90deg, transparent 0%, transparent 50%, var(--gray-900) 50%, var(--gray-900) 100%);
+    }
+    .nav-cta .btn-ghost:hover {
+      background-position: 100% 0;
+      color: #fff;
+    }
+    /* Get Started Free (primary): near-black -> lighter slate slides across */
+    .nav-cta .btn-primary {
+      background-image: linear-gradient(90deg, var(--gray-900) 0%, var(--gray-900) 50%, var(--gray-700) 50%, var(--gray-700) 100%);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+    }
+    .nav-cta .btn-primary:hover {
+      background-image: linear-gradient(90deg, var(--gray-900) 0%, var(--gray-900) 50%, var(--gray-700) 50%, var(--gray-700) 100%);
+      background-position: 100% 0;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .nav-cta .btn { transition: color 0.2s ease, box-shadow 0.2s ease; }
+      .nav-cta .btn:hover { background-position: 0% 0; transform: none; }
+    }
     
     .mobile-menu-btn {
       display: flex;
@@ -1176,6 +1209,29 @@
     .footer-column a:hover {
       color: white;
     }
+
+    .footer-cities {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--gray-800);
+    }
+    .footer-cities h4 {
+      color: white;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    .footer-cities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 0.5rem 1.5rem;
+    }
+    .footer-cities-grid a {
+      color: var(--gray-400);
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .footer-cities-grid a:hover { color: white; }
     
     .footer-bottom {
       border-top: 1px solid var(--gray-800);
@@ -1432,7 +1488,7 @@
       <div class="nav-links">
         <a href="#how-it-works">How It Works</a>
         <a href="#features">Features</a>
-        <a href="#city-guides">City Guides</a>
+        <a href="#city-guides-footer">City Guides</a>
         <a href="#resources">Resources</a>
         <a href="#faq">FAQ</a>
         <a href="https://app.suiteleez.com/landlords">For Landlords</a>
@@ -1451,7 +1507,7 @@
     <div class="mobile-menu" id="mobile-menu">
       <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
       <a href="#features" onclick="closeMobileMenu()">Features</a>
-      <a href="#city-guides" onclick="closeMobileMenu()">City Guides</a>
+      <a href="#city-guides-footer" onclick="closeMobileMenu()">City Guides</a>
       <a href="#resources" onclick="closeMobileMenu()">Resources</a>
       <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
       <a href="https://app.suiteleez.com/landlords">For Landlords</a>
@@ -1538,30 +1594,6 @@
             </div>
             <span>+2.4k users this week</span>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats Section -->
-  <section class="stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat">
-          <div class="stat-value">10,000+</div>
-          <div class="stat-label">Active Listings</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">500+</div>
-          <div class="stat-label">Cities Covered</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">98%</div>
-          <div class="stat-label">Customer Satisfaction</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">2.5x</div>
-          <div class="stat-label">Faster Lease Closing</div>
         </div>
       </div>
     </div>
@@ -1729,452 +1761,6 @@
           </ul>
           <a href="https://app.suiteleez.com/landlords" class="btn">List Your Property</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <div class="container">
-      <div class="section-header">
-        <h2>Loved by Teams Everywhere</h2>
-        <p>See what our customers have to say</p>
-      </div>
-      
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="stars">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
-          </div>
-          <blockquote>"SuiteLeez cut our office search from 3 months to 3 weeks. The AI customization feature let us see exactly how our team would fit before committing."</blockquote>
-          <div class="testimonial-author">
-            <div class="author-avatar">SC</div>
-            <div>
-              <div class="author-name">Sarah Chen</div>
-              <div class="author-role">COO, TechStart Inc.</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="testimonial-card">
-          <div class="stars">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
-          </div>
-          <blockquote>"As a landlord, I've never had such qualified leads. Tenants come prepared with their layout requirements, making negotiations smoother."</blockquote>
-          <div class="testimonial-author">
-            <div class="author-avatar">MR</div>
-            <div>
-              <div class="author-name">Michael Rodriguez</div>
-              <div class="author-role">Property Owner, Austin TX</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="testimonial-card">
-          <div class="stars">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" style="width: 20px; height: 20px;" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
-          </div>
-          <blockquote>"The deal room feature is a game-changer. Everything's in one place—no more hunting through email threads for that one attachment."</blockquote>
-          <div class="testimonial-author">
-            <div class="author-avatar">JP</div>
-            <div>
-              <div class="author-name">Jennifer Park</div>
-              <div class="author-role">Real Estate Director, Growth Co.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- City Guides Section -->
-  <section class="city-guides" id="city-guides">
-    <div class="container">
-      <div class="section-header">
-        <h2>Office Space Guides by City</h2>
-        <p>Deep-dive market reports for 30 U.S. cities — neighborhoods, pricing, lease terms, and how to find the right space fast.</p>
-      </div>
-
-      <div class="city-guides-tabs" role="tablist">
-        <button type="button" class="city-tab active" data-filter="all">All Cities (30)</button>
-        <button type="button" class="city-tab" data-filter="Tier 1">Major Markets</button>
-        <button type="button" class="city-tab" data-filter="Tier 2">Growing Markets</button>
-        <button type="button" class="city-tab" data-filter="Tier 3">Emerging Markets</button>
-      </div>
-
-      <div class="city-guides-grid" id="city-guides-grid">
-        <a href="./boston-ma-office-space.html" class="city-guide-card" data-tier="Tier 1">
-          <div class="city-guide-meta">
-            <span>📍 Boston MA</span>
-            <span class="city-guide-tier t1">Tier 1 · Major</span>
-          </div>
-          <h3>Office Space for Lease in Boston: Your Complete 2026 Guide</h3>
-          <p>Find office space for lease in Boston MA. Explore Financial District, Seaport, Back Bay and Cambridge. Updated market data and leasing guide for Boston.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">5195 words · April 3</span>
-          </div>
-        </a>
-        <a href="./houston-tx-office-space.html" class="city-guide-card" data-tier="Tier 1">
-          <div class="city-guide-meta">
-            <span>📍 Houston TX</span>
-            <span class="city-guide-tier t1">Tier 1 · Major</span>
-          </div>
-          <h3>Office Space for Lease in Houston: Your Complete 2026 Guide</h3>
-          <p>Find premium office space for lease in Houston TX. Explore neighborhoods, competitive pricing, and market insights. Use SuiteLeez for AI-powered office search.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">6126 words · April 1</span>
-          </div>
-        </a>
-        <a href="./austin-tx-office-space.html" class="city-guide-card" data-tier="Tier 1">
-          <div class="city-guide-meta">
-            <span>📍 Austin TX</span>
-            <span class="city-guide-tier t1">Tier 1 · Major Market</span>
-          </div>
-          <h3>Office Space for Lease in Austin: Your Complete 2026 Guide</h3>
-          <p>Find and customize office space in Austin, TX. Explore downtown, Domain, and East Austin listings. Visualize layouts with AI before signing on SuiteLeez.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">3099 words · February 3</span>
-          </div>
-        </a>
-        <a href="./chicago-il-office-space.html" class="city-guide-card" data-tier="Tier 1">
-          <div class="city-guide-meta">
-            <span>📍 Chicago IL</span>
-            <span class="city-guide-tier t1">Tier 1 · Major Market</span>
-          </div>
-          <h3>Office Space for Lease in Chicago: Your Complete 2026 Guide</h3>
-          <p>Discover top office spaces for lease in Chicago, IL. Explore the Loop, River North, and West Loop. Customize layouts with AI on SuiteLeez. Search free today.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">3454 words · February 12</span>
-          </div>
-        </a>
-        <a href="./dallas-tx-office-space.html" class="city-guide-card" data-tier="Tier 1">
-          <div class="city-guide-meta">
-            <span>📍 Dallas TX</span>
-            <span class="city-guide-tier t1">Tier 1 · Major Market</span>
-          </div>
-          <h3>Office Space for Lease in Dallas: Your Complete 2026 Guide</h3>
-          <p>Find office spaces for lease in Dallas, TX. Explore Uptown, Deep Ellum, and Legacy West. Customize floor plans with AI on SuiteLeez. Search free today.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">2847 words · March 9</span>
-          </div>
-        </a>
-        <a href="./los-angeles-ca-office-space.html" class="city-guide-card" data-tier="Tier 1">
-          <div class="city-guide-meta">
-            <span>📍 Los Angeles CA</span>
-            <span class="city-guide-tier t1">Tier 1 · Major Market</span>
-          </div>
-          <h3>Office Space for Lease in Los Angeles: Your Complete 2026 Guide</h3>
-          <p>Find office spaces for lease in Los Angeles, CA. Explore DTLA, Santa Monica, and Hollywood. Customize floor plans with AI on SuiteLeez. Search free.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">3200 words · March 2</span>
-          </div>
-        </a>
-        <a href="./miami-fl-office-space.html" class="city-guide-card" data-tier="Tier 1">
-          <div class="city-guide-meta">
-            <span>📍 Miami FL</span>
-            <span class="city-guide-tier t1">Tier 1 · Major Market</span>
-          </div>
-          <h3>Office Space for Lease in Miami: Your Complete 2026 Guide</h3>
-          <p>Find the perfect commercial space in Miami. Our AI-powered platform lets you customize layouts in real-time. Search 500+ listings on SuiteLeez today.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">3390 words · February 10</span>
-          </div>
-        </a>
-        <a href="./new-york-city-office-space.html" class="city-guide-card" data-tier="Tier 1">
-          <div class="city-guide-meta">
-            <span>📍 New York City</span>
-            <span class="city-guide-tier t1">Tier 1 · Major Market</span>
-          </div>
-          <h3>Office Space for Lease in NYC: Your Complete 2026 Guide</h3>
-          <p>Find premium office spaces for lease in NYC. Search Manhattan, Brooklyn, and beyond. Customize floor plans with AI on SuiteLeez. Start your free search.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">3637 words · February 5</span>
-          </div>
-        </a>
-        <a href="./san-francisco-ca-office-space.html" class="city-guide-card" data-tier="Tier 1">
-          <div class="city-guide-meta">
-            <span>📍 San Francisco CA</span>
-            <span class="city-guide-tier t1">Tier 1 · Major Market</span>
-          </div>
-          <h3>Office Space for Lease in San Francisco: Your Complete 2026 Guide</h3>
-          <p>Find office spaces for lease in San Francisco. Explore SoMa, FiDi, and Mission Bay. Customize floor plans with AI on SuiteLeez. Start searching free.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">3100 words · March 5</span>
-          </div>
-        </a>
-        <a href="./seattle-wa-office-space.html" class="city-guide-card" data-tier="Tier 1">
-          <div class="city-guide-meta">
-            <span>📍 Seattle WA</span>
-            <span class="city-guide-tier t1">Tier 1 · Major Market</span>
-          </div>
-          <h3>Office Space for Lease in Seattle: Your Complete 2026 Guide</h3>
-          <p>Find office spaces for lease in Seattle, WA. Explore South Lake Union, Pioneer Square, and Bellevue. Customize layouts with AI on SuiteLeez.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">3000 words · March 12</span>
-          </div>
-        </a>
-        <a href="./minneapolis-mn-office-space.html" class="city-guide-card" data-tier="Tier 2">
-          <div class="city-guide-meta">
-            <span>📍 Minneapolis MN</span>
-            <span class="city-guide-tier t2">Tier 2 · Growing</span>
-          </div>
-          <h3>Office Space for Lease in Minneapolis: Your Complete 2026 Guide</h3>
-          <p>Find premium office space for lease in Minneapolis MN. Explore neighborhoods, Fortune 500 hub, skyway system and market insights. SuiteLeez AI search.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">6703 words · April 7</span>
-          </div>
-        </a>
-        <a href="./portland-or-office-space.html" class="city-guide-card" data-tier="Tier 2">
-          <div class="city-guide-meta">
-            <span>📍 Portland OR</span>
-            <span class="city-guide-tier t2">Tier 2 · Growing</span>
-          </div>
-          <h3>Office Space for Lease in Portland: Your Complete 2026 Guide</h3>
-          <p>Find office space for lease in Portland OR. Explore tech neighborhoods, creative districts, sustainable offices. AI-powered search on SuiteLeez today.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">6714 words · April 5</span>
-          </div>
-        </a>
-        <a href="./atlanta-ga-office-space.html" class="city-guide-card" data-tier="Tier 2">
-          <div class="city-guide-meta">
-            <span>📍 Atlanta GA</span>
-            <span class="city-guide-tier t2">Tier 2 · Growing Market</span>
-          </div>
-          <h3>Office Space for Lease in Atlanta: Your Complete 2026 Guide</h3>
-          <p>Find office spaces for lease in Atlanta, GA. Explore Midtown, Buckhead, and West Midtown. Customize floor plans with AI on SuiteLeez. Search free.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">2909 words · February 24</span>
-          </div>
-        </a>
-        <a href="./charlotte-nc-office-space.html" class="city-guide-card" data-tier="Tier 2">
-          <div class="city-guide-meta">
-            <span>📍 Charlotte NC</span>
-            <span class="city-guide-tier t2">Tier 2 · Growing Market</span>
-          </div>
-          <h3>Office Space for Lease in Charlotte: Your Complete 2026 Guide</h3>
-          <p>Find office spaces for lease in Charlotte, NC. Explore Uptown, South End, and NoDa. Customize floor plans with AI on SuiteLeez. Start searching free.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">3103 words · February 25</span>
-          </div>
-        </a>
-        <a href="./denver-co-office-space.html" class="city-guide-card" data-tier="Tier 2">
-          <div class="city-guide-meta">
-            <span>📍 Denver CO</span>
-            <span class="city-guide-tier t2">Tier 2 · Growing Market</span>
-          </div>
-          <h3>Office Space for Lease in Denver: Your Complete 2026 Guide</h3>
-          <p>Find office spaces for lease in Denver, CO. Explore LoDo, RiNo, and Cherry Creek. Customize floor plans with AI on SuiteLeez. Start searching free.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">2907 words · February 17</span>
-          </div>
-        </a>
-        <a href="./nashville-tn-office-space.html" class="city-guide-card" data-tier="Tier 2">
-          <div class="city-guide-meta">
-            <span>📍 Nashville TN</span>
-            <span class="city-guide-tier t2">Tier 2 · Growing Market</span>
-          </div>
-          <h3>Office Space for Lease in Nashville: Your Complete 2026 Guide</h3>
-          <p>Find office spaces for lease in Nashville, TN. Explore the Gulch, SoBro, and East Nashville. Customize layouts with AI on SuiteLeez. Search free.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">2784 words · February 19</span>
-          </div>
-        </a>
-        <a href="./phoenix-az-office-space.html" class="city-guide-card" data-tier="Tier 2">
-          <div class="city-guide-meta">
-            <span>📍 Phoenix AZ</span>
-            <span class="city-guide-tier t2">Tier 2 · Growing Market</span>
-          </div>
-          <h3>Office Space for Lease in Phoenix: Your Complete 2026 Guide</h3>
-          <p>Find office spaces for lease in Phoenix, AZ. Explore Downtown, Scottsdale, and Tempe. Customize floor plans with AI on SuiteLeez. Start searching free.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">2900 words · March 16</span>
-          </div>
-        </a>
-        <a href="./raleigh-durham-nc-office-space.html" class="city-guide-card" data-tier="Tier 2">
-          <div class="city-guide-meta">
-            <span>📍 Raleigh-Durham NC</span>
-            <span class="city-guide-tier t2">Tier 2 · Growing Market</span>
-          </div>
-          <h3>Office Space for Lease in Raleigh-Durham: Your Complete 2026 Guide</h3>
-          <p>Find office spaces for lease in the Raleigh-Durham Triangle. Explore RTP, Downtown Raleigh, and Durham. Customize layouts with AI on SuiteLeez.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">2900 words · March 19</span>
-          </div>
-        </a>
-        <a href="./san-diego-ca-office-space.html" class="city-guide-card" data-tier="Tier 2">
-          <div class="city-guide-meta">
-            <span>📍 San Diego CA</span>
-            <span class="city-guide-tier t2">Tier 2 · Growing Market</span>
-          </div>
-          <h3>Office Space for Lease in San Diego: Your Complete 2026 Guide</h3>
-          <p>Find office spaces for lease in San Diego, CA. Explore Downtown, UTC, and Del Mar Heights. Customize floor plans with AI on SuiteLeez. Search free.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">2950 words · March 25</span>
-          </div>
-        </a>
-        <a href="./tampa-fl-office-space.html" class="city-guide-card" data-tier="Tier 2">
-          <div class="city-guide-meta">
-            <span>📍 Tampa FL</span>
-            <span class="city-guide-tier t2">Tier 2 · Growing Market</span>
-          </div>
-          <h3>Office Space for Lease in Tampa: Your Complete 2026 Guide</h3>
-          <p>Find office spaces for lease in Tampa, FL. Explore Downtown, Westshore, and Ybor City. Customize floor plans with AI on SuiteLeez. Search free today.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">2800 words · March 23</span>
-          </div>
-        </a>
-        <a href="./cincinnati-oh-office-space.html" class="city-guide-card" data-tier="Tier 3">
-          <div class="city-guide-meta">
-            <span>📍 Cincinnati OH</span>
-            <span class="city-guide-tier t3">Tier 3 · Emerging</span>
-          </div>
-          <h3>Office Space for Lease in Cincinnati: Your Complete 2026 Guide</h3>
-          <p>Find premium office space for lease in Cincinnati OH. Explore downtown, Over-the-Rhine, riverfront locations. Check vacancy rates and neighborhoods.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">4369 words · April 13</span>
-          </div>
-        </a>
-        <a href="./indianapolis-in-office-space.html" class="city-guide-card" data-tier="Tier 3">
-          <div class="city-guide-meta">
-            <span>📍 Indianapolis IN</span>
-            <span class="city-guide-tier t3">Tier 3 · Emerging</span>
-          </div>
-          <h3>Office Space for Lease in Indianapolis: Your Complete 2026 Guide</h3>
-          <p>Find premium office space for lease in Indianapolis IN. Explore downtown, Carmel, Broad Ripple and more. Affordable rates. Search free on SuiteLeez.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">4086 words · April 9</span>
-          </div>
-        </a>
-        <a href="./jacksonville-fl-office-space.html" class="city-guide-card" data-tier="Tier 3">
-          <div class="city-guide-meta">
-            <span>📍 Jacksonville FL</span>
-            <span class="city-guide-tier t3">Tier 3 · Emerging</span>
-          </div>
-          <h3>Office Space for Lease in Jacksonville: Your Complete 2026 Guide</h3>
-          <p>Find premium office space for lease in Jacksonville FL. Explore top neighborhoods with competitive rates from $16-30/sq ft. Browse available suites today.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">3576 words · April 17</span>
-          </div>
-        </a>
-        <a href="./kansas-city-mo-office-space.html" class="city-guide-card" data-tier="Tier 3">
-          <div class="city-guide-meta">
-            <span>📍 Kansas City MO</span>
-            <span class="city-guide-tier t3">Tier 3 · Emerging</span>
-          </div>
-          <h3>Office Space for Lease in Kansas City: Your Complete 2026 Guide</h3>
-          <p>Find affordable office space for lease in Kansas City MO. Explore neighborhoods, tech growth, and competitive market. AI-powered search on SuiteLeez.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">6558 words · April 11</span>
-          </div>
-        </a>
-        <a href="./richmond-va-office-space.html" class="city-guide-card" data-tier="Tier 3">
-          <div class="city-guide-meta">
-            <span>📍 Richmond VA</span>
-            <span class="city-guide-tier t3">Tier 3 · Emerging</span>
-          </div>
-          <h3>Office Space for Lease in Richmond: Your Complete 2026 Guide</h3>
-          <p>Premium office space for lease in Richmond VA. Explore Downtown, Scott&#x27;s Addition, West End. Competitive rates $16-32/sq ft. Find your ideal workspace.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">3839 words · April 19</span>
-          </div>
-        </a>
-        <a href="./san-antonio-tx-office-space.html" class="city-guide-card" data-tier="Tier 3">
-          <div class="city-guide-meta">
-            <span>📍 San Antonio TX</span>
-            <span class="city-guide-tier t3">Tier 3 · Emerging</span>
-          </div>
-          <h3>Office Space for Lease in San Antonio: Your Complete 2026 Guide</h3>
-          <p>Discover premium office space for lease in San Antonio TX. Browse available suites in downtown, Pearl, Stone Oak and more. Affordable rates from $16/sq ft.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">3174 words · April 15</span>
-          </div>
-        </a>
-        <a href="./columbus-oh-office-space.html" class="city-guide-card" data-tier="Tier 3">
-          <div class="city-guide-meta">
-            <span>📍 Columbus OH</span>
-            <span class="city-guide-tier t3">Tier 3 · Emerging Market</span>
-          </div>
-          <h3>Office Space for Lease in Columbus: Your Complete 2026 Guide</h3>
-          <p>Find office spaces for lease in Columbus, OH. Explore Downtown, Short North, and Dublin. Customize floor plans with AI on SuiteLeez. Start searching free.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">3040 words · February 28</span>
-          </div>
-        </a>
-        <a href="./orlando-fl-office-space.html" class="city-guide-card" data-tier="Tier 3">
-          <div class="city-guide-meta">
-            <span>📍 Orlando FL</span>
-            <span class="city-guide-tier t3">Tier 3 · Emerging Market</span>
-          </div>
-          <h3>Office Space for Lease in Orlando: Your Complete 2026 Guide</h3>
-          <p>Find office spaces for lease in Orlando, FL. Explore Downtown, Lake Nona, and Maitland. Customize floor plans with AI on SuiteLeez. Start searching free.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">2850 words · March 30</span>
-          </div>
-        </a>
-        <a href="./pittsburgh-pa-office-space.html" class="city-guide-card" data-tier="Tier 3">
-          <div class="city-guide-meta">
-            <span>📍 Pittsburgh PA</span>
-            <span class="city-guide-tier t3">Tier 3 · Emerging Market</span>
-          </div>
-          <h3>Office Space for Lease in Pittsburgh: Your Complete 2026 Guide</h3>
-          <p>Find office spaces for lease in Pittsburgh, PA. Explore Downtown, Strip District, and Lawrenceville. Customize layouts with AI on SuiteLeez. Search free.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">2800 words · March 27</span>
-          </div>
-        </a>
-        <a href="./salt-lake-city-office-space.html" class="city-guide-card" data-tier="Tier 3">
-          <div class="city-guide-meta">
-            <span>📍 Salt Lake City UT</span>
-            <span class="city-guide-tier t3">Tier 3 · Emerging Market</span>
-          </div>
-          <h3>Office Space for Lease in Salt Lake City: Your Complete 2026 Guide</h3>
-          <p>Find premium office spaces for lease in Salt Lake City, UT. Explore Downtown, Sugar House, and Silicon Slopes. Customize layouts with AI on SuiteLeez.</p>
-          <div class="city-guide-foot">
-            <span>Read guide →</span>
-            <span class="word-count">3445 words · February 27</span>
-          </div>
-        </a>
       </div>
     </div>
   </section>
@@ -2369,6 +1955,43 @@
         </div>
       </div>
       
+      <!-- Office Space Guides by City - kept live for reference & SEO, linked here from the footer -->
+      <div class="footer-cities" id="city-guides-footer">
+        <h4>Office Space Guides by City</h4>
+        <div class="footer-cities-grid">
+          <a href="./boston-ma-office-space.html">Boston MA</a>
+          <a href="./houston-tx-office-space.html">Houston TX</a>
+          <a href="./austin-tx-office-space.html">Austin TX</a>
+          <a href="./chicago-il-office-space.html">Chicago IL</a>
+          <a href="./dallas-tx-office-space.html">Dallas TX</a>
+          <a href="./los-angeles-ca-office-space.html">Los Angeles CA</a>
+          <a href="./miami-fl-office-space.html">Miami FL</a>
+          <a href="./new-york-city-office-space.html">New York City</a>
+          <a href="./san-francisco-ca-office-space.html">San Francisco CA</a>
+          <a href="./seattle-wa-office-space.html">Seattle WA</a>
+          <a href="./minneapolis-mn-office-space.html">Minneapolis MN</a>
+          <a href="./portland-or-office-space.html">Portland OR</a>
+          <a href="./atlanta-ga-office-space.html">Atlanta GA</a>
+          <a href="./charlotte-nc-office-space.html">Charlotte NC</a>
+          <a href="./denver-co-office-space.html">Denver CO</a>
+          <a href="./nashville-tn-office-space.html">Nashville TN</a>
+          <a href="./phoenix-az-office-space.html">Phoenix AZ</a>
+          <a href="./raleigh-durham-nc-office-space.html">Raleigh-Durham NC</a>
+          <a href="./san-diego-ca-office-space.html">San Diego CA</a>
+          <a href="./tampa-fl-office-space.html">Tampa FL</a>
+          <a href="./cincinnati-oh-office-space.html">Cincinnati OH</a>
+          <a href="./indianapolis-in-office-space.html">Indianapolis IN</a>
+          <a href="./jacksonville-fl-office-space.html">Jacksonville FL</a>
+          <a href="./kansas-city-mo-office-space.html">Kansas City MO</a>
+          <a href="./richmond-va-office-space.html">Richmond VA</a>
+          <a href="./san-antonio-tx-office-space.html">San Antonio TX</a>
+          <a href="./columbus-oh-office-space.html">Columbus OH</a>
+          <a href="./orlando-fl-office-space.html">Orlando FL</a>
+          <a href="./pittsburgh-pa-office-space.html">Pittsburgh PA</a>
+          <a href="./salt-lake-city-office-space.html">Salt Lake City UT</a>
+        </div>
+      </div>
+
       <div class="footer-bottom">
         <p>© 2026 SuiteLeez. All rights reserved.</p>
         <div class="footer-legal">
@@ -2446,18 +2069,6 @@
       });
     });
   
-    // City Guides filter
-    document.querySelectorAll('.city-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.city-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        const f = tab.dataset.filter;
-        document.querySelectorAll('.city-guide-card').forEach(card => {
-          if (f === 'all' || card.dataset.tier === f) card.classList.remove('hidden');
-          else card.classList.add('hidden');
-        });
-      });
-    });
 
   </script>
 
