@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources &amp; Insights — SuiteLeez</title>
+  <meta name="description" content="Guides, market insights, and city-by-city office-space breakdowns from SuiteLeez. Everything you need to find, customize, and lease the right commercial space.">
+  <meta name="keywords" content="commercial real estate guides, office space resources, city office guides, SuiteLeez insights">
+  <link rel="canonical" href="https://suiteleez.com/resources">
+  <meta property="og:title" content="Resources &amp; Insights — SuiteLeez">
+  <meta property="og:description" content="Guides, market insights, and city-by-city office-space breakdowns from SuiteLeez.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://suiteleez.com/resources">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    :root{
+      --indigo-50:#fafafa;--indigo-100:#f5f5f5;--indigo-200:#e5e5e5;--indigo-300:#a3a3a3;
+      --indigo-400:#737373;--indigo-500:#525252;--indigo-600:#18181b;--indigo-700:#0a0a0a;
+      --purple-600:#27272a;--purple-700:#18181b;
+      --gray-50:#fafafa;--gray-100:#f5f5f5;--gray-200:#e5e5e5;--gray-300:#d4d4d4;
+      --gray-400:#a3a3a3;--gray-500:#737373;--gray-600:#525252;--gray-700:#404040;
+      --gray-800:#262626;--gray-900:#171717;
+    }
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.7;color:var(--gray-900);background:white;}
+    a{color:inherit;text-decoration:none;}
+    button{cursor:pointer;font-family:inherit;border:none;outline:none;}
+    .container{max-width:1100px;margin:0 auto;padding:0 1rem;}
+    @media (min-width:640px){.container{padding:0 1.5rem;}}
+    @media (min-width:1024px){.container{padding:0 2rem;}}
+
+    .nav{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);z-index:50;border-bottom:1px solid var(--gray-100);}
+    .nav-inner{display:flex;justify-content:space-between;align-items:center;height:64px;max-width:1280px;margin:0 auto;padding:0 1rem;}
+    .logo{display:flex;align-items:center;gap:0.5rem;}
+    .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,var(--indigo-600),var(--purple-600));border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;}
+    .logo-text{font-size:1.25rem;font-weight:700;}
+    .nav-links{display:none;align-items:center;gap:2rem;}
+    @media (min-width:768px){.nav-links{display:flex;}}
+    .nav-links a{color:var(--gray-600);transition:color 0.2s;}
+    .nav-links a:hover{color:var(--gray-900);}
+    .nav-cta{display:none;align-items:center;gap:1rem;}
+    @media (min-width:768px){.nav-cta{display:flex;}}
+    .btn{padding:0.5rem 1.25rem;border-radius:8px;font-weight:500;transition:all 0.2s;display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;}
+    .btn-ghost{background:transparent;color:var(--gray-600);}
+    .btn-ghost:hover{color:var(--gray-900);}
+    .btn-primary{background:var(--indigo-600);color:white;}
+    .btn-primary:hover{background:var(--indigo-700);}
+
+    .page-hero{padding:8rem 0 2.5rem;background:linear-gradient(180deg,var(--gray-50) 0%,white 100%);border-bottom:1px solid var(--gray-100);}
+    .page-hero .badge{display:inline-flex;align-items:center;gap:0.4rem;background:white;border:1px solid var(--gray-200);color:var(--gray-700);padding:0.35rem 0.85rem;border-radius:9999px;font-size:0.8rem;font-weight:500;margin-bottom:1rem;}
+    .page-hero h1{font-size:2.25rem;font-weight:800;line-height:1.15;color:var(--gray-900);margin-bottom:1rem;letter-spacing:-0.02em;}
+    @media (min-width:768px){.page-hero h1{font-size:3rem;}}
+    .page-hero p{font-size:1.2rem;color:var(--gray-600);max-width:720px;line-height:1.6;}
+
+    .section{padding:3rem 0;}
+    .section h2{font-size:1.65rem;font-weight:700;color:var(--gray-900);margin-bottom:0.5rem;letter-spacing:-0.01em;}
+    .section p.sub{color:var(--gray-600);margin-bottom:1.75rem;}
+
+    .guide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;}
+    .guide-card{display:flex;flex-direction:column;background:white;border:1px solid var(--gray-200);border-radius:14px;padding:1.5rem;transition:all 0.2s;}
+    .guide-card:hover{border-color:var(--indigo-600);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.06);}
+    .guide-card .cat{display:inline-block;font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--gray-500);margin-bottom:0.6rem;}
+    .guide-card h3{font-size:1.2rem;font-weight:700;color:var(--gray-900);margin-bottom:0.5rem;line-height:1.3;}
+    .guide-card p{color:var(--gray-600);font-size:0.95rem;margin-bottom:1rem;flex-grow:1;}
+    .guide-card .meta{font-size:0.8rem;color:var(--gray-400);display:flex;align-items:center;gap:0.5rem;}
+    .guide-card .meta .read-more{color:var(--gray-900);font-weight:600;margin-left:auto;}
+
+    .cities-section{background:var(--gray-50);border-top:1px solid var(--gray-100);}
+    .city-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0.75rem;}
+    .city-chip{background:white;border:1px solid var(--gray-200);border-radius:10px;padding:0.9rem 1.1rem;color:var(--gray-700);font-weight:500;transition:all 0.2s;display:flex;align-items:center;justify-content:space-between;gap:0.5rem;}
+    .city-chip:hover{border-color:var(--indigo-600);color:var(--gray-900);transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,0.05);}
+
+    .footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 0 1.5rem;}
+    .footer-bottom{border-top:1px solid var(--gray-700);padding-top:1.25rem;margin-top:0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:0.875rem;color:var(--gray-400);}
+    .footer a{color:var(--gray-400);}
+    .footer a:hover{color:white;}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="./index.html" class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></svg>
+        </div>
+        <span class="logo-text">SuiteLeez</span>
+      </a>
+      <div class="nav-links">
+        <a href="./index.html#how-it-works">How It Works</a>
+        <a href="./index.html#features">Features</a>
+        <a href="./resources.html">Resources</a>
+        <a href="./index.html#city-guides-footer">City Guides</a>
+        <a href="./index.html#faq">FAQ</a>
+      </div>
+      <div class="nav-cta">
+        <a href="https://app.suiteleez.com/login" class="btn btn-ghost">Sign In</a>
+        <a href="https://app.suiteleez.com/" class="btn btn-primary">Get Started Free</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <span class="badge">📚 Resources &amp; Insights</span>
+      <h1>Guides &amp; Insights</h1>
+      <p>Practical guides, market insights, and city-by-city breakdowns to help you find, customize, and lease the right office space&mdash;written by the team building SuiteLeez.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2>Featured guides</h2>
+      <p class="sub">Deep dives on negotiating, market trends, and finding the right space.</p>
+      <div class="guide-grid">
+        <a href="./how-to-negotiate-commercial-lease.html" class="guide-card">
+          <span class="cat">Guide</span>
+          <h3>How to Negotiate Your Commercial Lease Like a Pro</h3>
+          <p>The clauses that matter, the red flags to watch for, and the moves that quietly save tenants thousands.</p>
+          <div class="meta"><span>8 min read</span><span class="read-more">Read &rarr;</span></div>
+        </a>
+        <a href="./2026-office-space-trends.html" class="guide-card">
+          <span class="cat">Market Insights</span>
+          <h3>2026 Office Space Trends: What Tenants Want</h3>
+          <p>Hybrid work rewrote the brief. Here's what tenants are prioritizing in 2026 and what it means for your lease.</p>
+          <div class="meta"><span>5 min read</span><span class="read-more">Read &rarr;</span></div>
+        </a>
+        <a href="./austin-office-neighborhood-breakdown.html" class="guide-card">
+          <span class="cat">City Guide</span>
+          <h3>Austin Office Space: A Neighborhood Breakdown</h3>
+          <p>Downtown, the Domain, or East Austin? A submarket-by-submarket guide to leasing office space in Austin.</p>
+          <div class="meta"><span>10 min read</span><span class="read-more">Read &rarr;</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cities-section">
+    <div class="container">
+      <h2 id="city-guides">Office space guides by city</h2>
+      <p class="sub">In-depth guides for 30 U.S. markets&mdash;neighborhoods, pricing context, and what to know before you lease.</p>
+      <div class="city-grid">
+        <a href="./atlanta-ga-office-space.html" class="city-chip"><span>Atlanta, GA</span><span>&rarr;</span></a>
+        <a href="./austin-tx-office-space.html" class="city-chip"><span>Austin, TX</span><span>&rarr;</span></a>
+        <a href="./boston-ma-office-space.html" class="city-chip"><span>Boston, MA</span><span>&rarr;</span></a>
+        <a href="./charlotte-nc-office-space.html" class="city-chip"><span>Charlotte, NC</span><span>&rarr;</span></a>
+        <a href="./chicago-il-office-space.html" class="city-chip"><span>Chicago, IL</span><span>&rarr;</span></a>
+        <a href="./cincinnati-oh-office-space.html" class="city-chip"><span>Cincinnati, OH</span><span>&rarr;</span></a>
+        <a href="./columbus-oh-office-space.html" class="city-chip"><span>Columbus, OH</span><span>&rarr;</span></a>
+        <a href="./dallas-tx-office-space.html" class="city-chip"><span>Dallas, TX</span><span>&rarr;</span></a>
+        <a href="./denver-co-office-space.html" class="city-chip"><span>Denver, CO</span><span>&rarr;</span></a>
+        <a href="./houston-tx-office-space.html" class="city-chip"><span>Houston, TX</span><span>&rarr;</span></a>
+        <a href="./indianapolis-in-office-space.html" class="city-chip"><span>Indianapolis, IN</span><span>&rarr;</span></a>
+        <a href="./jacksonville-fl-office-space.html" class="city-chip"><span>Jacksonville, FL</span><span>&rarr;</span></a>
+        <a href="./kansas-city-mo-office-space.html" class="city-chip"><span>Kansas City, MO</span><span>&rarr;</span></a>
+        <a href="./los-angeles-ca-office-space.html" class="city-chip"><span>Los Angeles, CA</span><span>&rarr;</span></a>
+        <a href="./miami-fl-office-space.html" class="city-chip"><span>Miami, FL</span><span>&rarr;</span></a>
+        <a href="./minneapolis-mn-office-space.html" class="city-chip"><span>Minneapolis, MN</span><span>&rarr;</span></a>
+        <a href="./nashville-tn-office-space.html" class="city-chip"><span>Nashville, TN</span><span>&rarr;</span></a>
+        <a href="./new-york-city-office-space.html" class="city-chip"><span>New York City</span><span>&rarr;</span></a>
+        <a href="./orlando-fl-office-space.html" class="city-chip"><span>Orlando, FL</span><span>&rarr;</span></a>
+        <a href="./phoenix-az-office-space.html" class="city-chip"><span>Phoenix, AZ</span><span>&rarr;</span></a>
+        <a href="./pittsburgh-pa-office-space.html" class="city-chip"><span>Pittsburgh, PA</span><span>&rarr;</span></a>
+        <a href="./portland-or-office-space.html" class="city-chip"><span>Portland, OR</span><span>&rarr;</span></a>
+        <a href="./raleigh-durham-nc-office-space.html" class="city-chip"><span>Raleigh-Durham, NC</span><span>&rarr;</span></a>
+        <a href="./richmond-va-office-space.html" class="city-chip"><span>Richmond, VA</span><span>&rarr;</span></a>
+        <a href="./salt-lake-city-office-space.html" class="city-chip"><span>Salt Lake City, UT</span><span>&rarr;</span></a>
+        <a href="./san-antonio-tx-office-space.html" class="city-chip"><span>San Antonio, TX</span><span>&rarr;</span></a>
+        <a href="./san-diego-ca-office-space.html" class="city-chip"><span>San Diego, CA</span><span>&rarr;</span></a>
+        <a href="./san-francisco-ca-office-space.html" class="city-chip"><span>San Francisco, CA</span><span>&rarr;</span></a>
+        <a href="./seattle-wa-office-space.html" class="city-chip"><span>Seattle, WA</span><span>&rarr;</span></a>
+        <a href="./tampa-fl-office-space.html" class="city-chip"><span>Tampa, FL</span><span>&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 SuiteLeez. All rights reserved.</p>
+        <div>
+          <a href="https://app.suiteleez.com/privacy">Privacy</a> &middot;
+          <a href="https://app.suiteleez.com/terms">Terms</a> &middot;
+          <a href="https://app.suiteleez.com/contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
